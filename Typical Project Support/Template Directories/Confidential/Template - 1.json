@@ -1,0 +1,51 @@
+{
+  "ProjectName": "Template - 1",
+  "ProjectStatus": "ONGOING",
+  "RootPath": "",
+  "FolderStructure": [
+    {
+      "FolderName": "1. AGREEMENTS",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": [
+        {
+          "FolderName": "CHANGE ORDERS",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "INITIAL",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        }
+      ]
+    },
+    {
+      "FolderName": "2. INVOICING",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": [
+        {
+          "FolderName": "INVOICES",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "REPORTING",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        }
+      ]
+    },
+    {
+      "FolderName": "3. CORRESPONDENCE",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": []
+    }
+  ]
+}

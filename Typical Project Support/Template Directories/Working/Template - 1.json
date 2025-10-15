@@ -1,0 +1,154 @@
+{
+  "ProjectName": "Template - 1",
+  "ProjectStatus": "ONGOING",
+  "RootPath": "",
+  "FolderStructure": [
+    {
+      "FolderName": "1. Project Management",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": []
+    },
+    {
+      "FolderName": "2. Engineering",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": [
+        {
+          "FolderName": "1. Calculations",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": [
+            {
+              "FolderName": "_SS",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            }
+          ]
+        },
+        {
+          "FolderName": "2. Reports",
+          "Manage_Files_in_Folder": true,
+          "Files": [],
+          "SubFolders": [
+            {
+              "FolderName": "_SS",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            }
+          ]
+        },
+        {
+          "FolderName": "9. Approved Drawings",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": [
+            {
+              "FolderName": "_SS",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "FolderName": "3. Drafting",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": [
+        {
+          "FolderName": "_REF",
+          "Manage_Files_in_Folder": true,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "1. Client Submission",
+          "Manage_Files_in_Folder": true,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "2. Internal Submission",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "B01",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": [
+            {
+              "FolderName": "LASTREV",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            },
+            {
+              "FolderName": "STORAGE",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            },
+            {
+              "FolderName": "WORKDIR",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": [
+                {
+                  "FolderName": "_SS",
+                  "Manage_Files_in_Folder": false,
+                  "Files": [],
+                  "SubFolders": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "FolderName": "SUPPORT",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": [
+            {
+              "FolderName": "LOGO",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            },
+            {
+              "FolderName": "SIGNATURES",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": [
+                {
+                  "FolderName": "_SS",
+                  "Manage_Files_in_Folder": false,
+                  "Files": [],
+                  "SubFolders": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "FolderName": "5. Submittals",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": []
+    },
+    {
+      "FolderName": "6. Correspondence",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": []
+    }
+  ]
+}

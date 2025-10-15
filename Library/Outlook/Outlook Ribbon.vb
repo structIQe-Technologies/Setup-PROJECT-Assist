@@ -1,0 +1,371 @@
+﻿Imports Microsoft.Office.Tools.Ribbon
+Imports PROJECT_Assist_Common_Library
+Imports structIQe_Common_Library
+
+Imports System.Diagnostics
+Imports System.Net
+Imports System.Windows.Forms
+
+Public Class StructIQe
+
+    Private DeferTimer As Timer
+    Private StartupSw As New Stopwatch()
+
+    Private Sub Button14_Click(sender As Object, e As RibbonControlEventArgs) Handles Button_Check_for_Updates.Click
+
+        Program_Controls.UPDATE_Program()
+
+    End Sub
+
+    Private Sub StructIQe_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
+
+        TabstructIQe.Label = SettingsHelper.App_Name
+
+        'Refresh_Ribbon_As_per_permissions()
+
+        StartupSw.Start()
+
+        Try
+            ' 3) Defer all heavy/fragile work (MAPI folder access, disk, network)
+            DeferTimer = New Timer() With {.Interval = 2000}  ' 2s after Outlook is up
+            AddHandler DeferTimer.Tick, AddressOf DeferredInit
+            DeferTimer.Start()
+
+        Catch ex As System.Exception
+            ' Never let Startup throw
+        Finally
+            StartupSw.Stop()
+        End Try
+
+    End Sub
+
+    Private Sub DeferredInit(sender As Object, e As EventArgs)
+        DeferTimer.Stop()
+        RemoveHandler DeferTimer.Tick, AddressOf DeferredInit
+        DeferTimer.Dispose()
+        Dim sw As Stopwatch = Stopwatch.StartNew()
+
+        Try
+
+            Refresh_Ribbon_As_per_permissions()
+
+        Catch ex As System.Exception
+        Finally
+            sw.Stop()
+        End Try
+    End Sub
+    Sub Hide_all_buttons()
+        btnNewProject.Visible = False
+        grp_ProjectManager.Visible = False
+        grp_MailManager.Visible = False
+        grp_QualityManager.Visible = False
+        grp_DrawingManager.Visible = False
+        grp_TimeManager.Visible = False
+        grp_TaskManager.Visible = False
+        grp_ProjectGroupSettings.Visible = False
+        grp_General.Visible = False
+    End Sub
+    Async Sub Refresh_Ribbon_As_per_permissions()
+
+        Dim access = Await SupabaseHelper.TryAutoLoginAsync()
+
+        If access Is Nothing Then
+            Hide_all_buttons()
+            Dim res = SharedRibbonButtons.User_Login()
+            If res Is Nothing Then
+                Exit Sub
+            ElseIf res = True Then
+                access = SharedRibbonButtons.CurrentAccess
+                SharedRibbonButtons.update_app_name()
+            Else
+                access = Nothing
+            End If
+
+        End If
+
+
+        Reset_ribbon_from_Database(access)
+
+        'Dim settings = AppSettings.LoadSettings()
+
+        'If settings.User_Name = Nothing Then
+
+        '    grpProjectManager.Visible = False
+        '    grp_MailManager.Visible = False
+        '    grp_QualityButtons.Visible = False
+        '    grpTimeManager.Visible = False
+        '    grp_TaskManager.Visible = False
+        'Else
+
+        '    Reset_ribbon()
+
+        'End If
+
+    End Sub
+
+    'Sub Reset_ribbon()
+
+    '    'Load the settings from the JSON file
+    '    Dim settings = AppSettings.LoadSettings()
+
+    '    grp_ProjectManager.Visible = True
+
+
+    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Project_Manager) = False Or settings.Project_management_license_Check = False Then
+    '        btnNewProject.Visible = False
+    '    Else
+    '        btnNewProject.Visible = True
+    '    End If
+    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Mail_Manager) = False Or settings.Mail_management_license_Check = False Then
+    '        grp_MailManager.Visible = False
+    '    Else
+    '        grp_MailManager.Visible = True
+    '    End If
+    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Quality_Manager) = False Or settings.Quality_management_license_Check = False Then
+    '        grp_QualityManager.Visible = False
+    '    Else
+    '        grp_QualityManager.Visible = True
+    '    End If
+    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Time_Manager) = False Or settings.Time_management_license_Check = False Then
+    '        grp_TimeManager.Visible = False
+    '    Else
+    '        grp_TimeManager.Visible = True
+    '    End If
+    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Task_Manager) = False Or settings.Task_management_license_Check = False Then
+    '        grp_TaskManager.Visible = False
+    '    Else
+    '        grp_TaskManager.Visible = True
+    '    End If
+
+    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Project_Group_Manager) = False Then
+    '        grp_ProjectGroupSettings.Visible = False
+    '    Else
+    '        grp_ProjectGroupSettings.Visible = True
+    '    End If
+
+    'End Sub
+
+    Sub Reset_ribbon_from_Database(access As EffectiveAccessDto)
+
+        SharedRibbonButtons.CurrentAccess = access
+
+        If access Is Nothing Then
+            Hide_all_buttons()
+            Exit Sub
+        End If
+        ' Always show Project Manager group, but toggle buttons inside
+        'MsgBox("Name" & access.Project_Assist_Name)
+        'TabstructIQe.Label = access.Project_Assist_Name
+        'TabstructIQe.Visible = True
+
+        SharedRibbonButtons.update_app_name()
+
+        TabstructIQe.Label = If(String.IsNullOrWhiteSpace(access.Project_Assist_Name),
+                            SettingsHelper.App_Name, access.Project_Assist_Name)
+
+        If access.EffPaEnabled = False Then
+            Hide_all_buttons()
+            Exit Sub
+        End If
+
+        grp_General.Visible = True
+        grp_ProjectManager.Visible = True
+        '.
+
+        ' Feature-controlled items
+        btnNewProject.Visible = SupabaseHelper.Has(access, "projects")
+        grp_MailManager.Visible = SupabaseHelper.Has(access, "mail")
+        grp_QualityManager.Visible = SupabaseHelper.Has(access, "quality")
+        grp_DrawingManager.Visible = SupabaseHelper.Has(access, "drawings")
+        grp_TimeManager.Visible = SupabaseHelper.Has(access, "timesheet")
+        grp_TaskManager.Visible = SupabaseHelper.Has(access, "tasks")
+        grp_ProjectGroupSettings.Visible = SupabaseHelper.Has(access, "project_group_manager")
+
+        '' Projects → controlled by effective access
+        'If access.EffPaProjects Then
+        '    btnNewProject.Visible = True
+        'Else
+        '    btnNewProject.Visible = False
+        'End If
+
+        '' Mail Manager group
+        'If access.EffPaMail Then
+        '    grp_MailManager.Visible = True
+        'Else
+        '    grp_MailManager.Visible = False
+
+        'End If
+
+        '' Quality Manager group
+        'If access.EffPaQuality Then
+        '    grp_QualityManager.Visible = True
+        'Else
+        '    grp_QualityManager.Visible = False
+        'End If
+
+        ''Drawing Manager Group
+        'If access.EffPaDrawings Then
+        '    grp_DrawingManager.Visible = True
+        'Else
+        '    grp_DrawingManager.Visible = False
+        'End If
+
+        '' Time Manager group
+        'If access.EffPaTimesheet Then
+        '    grp_TimeManager.Visible = True
+        'Else
+        '    grp_TimeManager.Visible = False
+
+        'End If
+
+        '' Task Manager group
+        'If access.EffPaTasks Then
+        '    grp_TaskManager.Visible = True
+        'Else
+        '    grp_TaskManager.Visible = False
+        'End If
+
+        '' Company Settings (still purely license based for now)
+
+        'If access.EffPaProjectGroupManager Then
+        '    grp_ProjectGroupSettings.Visible = True
+        'Else
+        '    grp_ProjectGroupSettings.Visible = False
+        'End If
+
+
+    End Sub
+    Private Sub BtnNewProject_Click(sender As Object, e As RibbonControlEventArgs) Handles btnNewProject.Click
+
+        SharedRibbonButtons.Button_New_Project(False)
+
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As RibbonControlEventArgs) Handles Button11.Click
+
+        SharedRibbonButtons.Button_Manage_Projects()
+
+    End Sub
+
+
+    Private Sub Button5_Click(sender As Object, e As RibbonControlEventArgs) Handles Button5.Click
+
+        Shared_MailManagement_Class.Button_File_mails()
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As RibbonControlEventArgs) Handles Button6.Click
+
+        Shared_MailManagement_Class.Button_Retrieve_mails()
+
+    End Sub
+
+
+    Private Sub BtnSubmit_for_QC_Click(sender As Object, e As RibbonControlEventArgs) Handles btnSubmit_for_QC.Click
+
+        SharedQualityCheckClass.Button_Submit_for_QC("", "")
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As RibbonControlEventArgs) Handles Button2.Click
+
+        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+
+        ' SharedQualityCheckClass.Button_Submit_QC_Status()
+
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As RibbonControlEventArgs) Handles Button17.Click
+
+        SharedQualityCheckClass.Button_Review_QC_Status()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As RibbonControlEventArgs) Handles Button1.Click
+
+        SharedRibbonButtons.Button_User_Settings()
+
+        Refresh_Ribbon_As_per_permissions()
+
+    End Sub
+
+
+    Private Sub Button7_Click(sender As Object, e As RibbonControlEventArgs) Handles btnLicenseOptions.Click
+
+        'SharedRibbonButtons.Button_License_Options()
+
+        'Call Reset_ribbon()
+
+        Dim access
+
+        Dim res = SharedRibbonButtons.User_Login()
+        If res Is Nothing Then
+            Exit Sub
+        ElseIf res = True Then
+            access = SharedRibbonButtons.CurrentAccess
+        Else
+            access = Nothing
+        End If
+
+        Reset_ribbon_from_Database(access)
+
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As RibbonControlEventArgs) Handles Button9.Click
+
+        SharedRibbonButtons.Button_ProjectGroup_Edit_Settings()
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As RibbonControlEventArgs) Handles Button4.Click
+
+        SharedRibbonButtons.Button_About_Box()
+
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As RibbonControlEventArgs) Handles Button12.Click
+        SharedRibbonButtons.Button_User_Profiles()
+    End Sub
+
+    Private Sub Button7_Click_1(sender As Object, e As RibbonControlEventArgs) Handles Button7.Click
+        SharedRibbonButtons.Button_Submit_Timesheet()
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As RibbonControlEventArgs) Handles Button10.Click
+        SharedRibbonButtons.Button_New_Project_Group()
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As RibbonControlEventArgs) Handles Button13.Click
+        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As RibbonControlEventArgs) Handles Button15.Click
+        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As RibbonControlEventArgs) Handles Button16.Click
+        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As RibbonControlEventArgs) Handles Button8.Click
+        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As RibbonControlEventArgs) Handles Button18.Click
+
+        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+
+        'SharedRibbonButtons.Button_Manage_Drawings()
+    End Sub
+
+    Private Sub ButtonHelp_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonHelp.Click
+        SharedRibbonButtons.Button_Help()
+    End Sub
+
+    'Private Sub Login(sender As Object, e As RibbonControlEventArgs)
+
+    '    Reset_ribbon_from_Database(SharedRibbonButtons.User_Login())
+
+    'End Sub
+End Class

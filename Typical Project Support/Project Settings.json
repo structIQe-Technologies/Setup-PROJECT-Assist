@@ -1,0 +1,19 @@
+{
+  "ProjectGroupName": "Test Project",
+  "CreatedDate": "2025-04-03 17:49:05",
+  "YearWiseCategorise": true,
+  "Project_Classification": {
+    "Bridges": 1,
+    "Buildings": 2,
+    "Erection Engineering": 5
+  },
+  "Delete_Extensions": [
+    "bak"
+  ],
+  "Manage_Extensions": [
+    "xl*",
+    "doc",
+    "docx",
+    "pdf"
+  ]
+}

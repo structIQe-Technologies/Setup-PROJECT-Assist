@@ -1,0 +1,14 @@
+Hi Team,
+
+Congratulations to Everyone.
+We are initiating a New Project entailing the design of <Project Name>.
+
+Team:
+
+Attached are the following: 
+
+The project has also been set up in Replicon and Datto. 
+There is info placed in the Background Docs folder: <Project Folder>\2. Engineering\1. Background Docs
+Kindly review the same and let me know, if any queries.
+
+Let's please set up a team kick-off meeting at the earliest convenience.

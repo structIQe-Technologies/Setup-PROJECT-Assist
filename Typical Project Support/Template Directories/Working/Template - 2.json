@@ -1,0 +1,102 @@
+{
+  "ProjectName": "Template - 2",
+  "ProjectStatus": "ONGOING",
+  "RootPath": "",
+  "FolderStructure": [
+    {              
+       "FolderName": "1. BACKGROUND INFO",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": [
+        {
+          "FolderName": "1. RFP DOCS",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "2. ADDENDUMS",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "3. OTHER",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        }
+      ]
+    },
+    {
+      "FolderName": "2. PROPOSAL",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": [
+        {
+          "FolderName": "1. CONTENT",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "2. PROJECT SHEETS",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": [
+            {
+              "FolderName": "_SS",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            }
+          ]
+        },
+        {
+          "FolderName": "3. RESUMES",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": [
+            {
+              "FolderName": "_SS",
+              "Manage_Files_in_Folder": false,
+              "Files": [],
+              "SubFolders": []
+            }
+          ]
+        },
+        {
+          "FolderName": "4. FEE",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "5. FINAL SUBMISSION",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        }
+      ]
+    },
+    {
+      "FolderName": "3. BID STAGE WORK",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": [
+        {
+          "FolderName": "DRAFTING",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        },
+        {
+          "FolderName": "ENGINEERING",
+          "Manage_Files_in_Folder": false,
+          "Files": [],
+          "SubFolders": []
+        }
+      ]
+    }
+  ]
+}

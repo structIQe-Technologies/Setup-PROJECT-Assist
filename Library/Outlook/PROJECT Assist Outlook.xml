@@ -1,0 +1,216 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PROJECT Assist Outlook
+</name>
+</assembly>
+<members>
+<member name="T:PROJECT_Assist_Outlook.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources._126472">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources._81020">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.About_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.About_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.About_icon2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.App_Setting_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Configure_Reminders_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.hd_settings_black_line_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Help_Icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Help_Icon2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Licence_options_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.License_Icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Manage_Projects">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.New_Project">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.New_Project_1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.New_Project_Group_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Quality_Check">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Submit_for_QC">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Submit_QC_Status_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.Submit_QC_Status__1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.User_Profiles_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.User_Settings_Icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Outlook.My.Resources.Resources.View_Timesheets_1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:PROJECT_Assist_Outlook.ThisRibbonCollection">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisRibbonCollection.#ctor(Microsoft.Office.Tools.Ribbon.RibbonFactory)">
+
+</member>
+<member name="T:PROJECT_Assist_Outlook.ThisAddIn">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.#ctor(Microsoft.Office.Tools.Outlook.Factory,System.IServiceProvider)">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.Initialize">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.FinishInitialization">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.InitializeDataBindings">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.InitializeCachedData">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.InitializeData">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.BindToData">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.StartCaching(System.String)">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.StopCaching(System.String)">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.IsCached(System.String)">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.BeginInitialization">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.EndInitialization">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.InitializeControls">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.InitializeComponents">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.NeedsFill(System.String)">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisAddIn.OnShutdown">
+
+</member>
+<member name="T:PROJECT_Assist_Outlook.Globals">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.Globals.#ctor">
+
+</member>
+<member name="T:PROJECT_Assist_Outlook.ThisFormRegionCollection">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.ThisFormRegionCollection.#ctor(System.Collections.Generic.IList{Microsoft.Office.Tools.Outlook.IFormRegion})">
+
+</member>
+<member name="T:PROJECT_Assist_Outlook.WindowFormRegionCollection">
+
+</member>
+<member name="M:PROJECT_Assist_Outlook.WindowFormRegionCollection.#ctor(System.Collections.Generic.IList{Microsoft.Office.Tools.Outlook.IFormRegion})">
+
+</member>
+</members>
+</doc>

@@ -1,0 +1,25 @@
+{
+  "ProjectName": "Pursuits Template - 1",
+  "ProjectStatus": "ONGOING",
+  "RootPath": "",
+  "FolderStructure": [
+    {
+      "FolderName": "1. FEE",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": []
+    },
+    {
+      "FolderName": "2. FINAL SUBMISSION",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": []
+    },
+    {
+      "FolderName": "3. CORRESPONDENCE",
+      "Manage_Files_in_Folder": false,
+      "Files": [],
+      "SubFolders": []
+    }
+  ]
+}

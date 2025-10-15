@@ -1,0 +1,12 @@
+Dear [Recipient's Name],
+
+We are pleased to welcome you to the project team for <Project Name>, effective immediately. Your expertise will be instrumental in achieving the project milestones.
+
+Please note that [Name(s)] has/have been assigned as the Project Manager(s) for this project and will oversee coordination, execution, and delivery in alignment with client requirements and our internal quality standards.
+
+A kickoff meeting will be scheduled shortly to review scope, timelines, and deliverables. Kindly confirm your availability and let us know if you require any additional information or resources to get started.
+
+For your reference, all internal and external correspondence related to this project is stored at:
+<Project Folder>\6. Correspondence\
+
+We look forward to working together.

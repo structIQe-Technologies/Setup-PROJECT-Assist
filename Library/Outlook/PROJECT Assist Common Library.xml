@@ -1,0 +1,70 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PROJECT Assist Common Library
+</name>
+</assembly>
+<members>
+<member name="T:PROJECT_Assist_Common_Library.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Common_Library.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:PROJECT_Assist_Common_Library.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.License_Options.InitializeLicenseCheckboxes">
+ <summary>
+ Disable checkboxes if license is not available.
+ </summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.License_Options.ApplySavedSettings">
+ <summary>
+ Apply saved settings from JSON file.
+ </summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.License_Options.DisableIfNoLicense(System.Windows.Forms.CheckBox,System.String)">
+ <summary>
+ Disable a checkbox if the corresponding license check fails.
+ </summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.License_Options.UpdateRegisterAllState">
+ <summary>
+ Updates the "Register All" checkbox state based on individual selections.
+ Prevents unnecessary event loops.
+ </summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.License_Options.BtnOK_Click(System.Object,System.EventArgs)">
+ <summary>
+ Saves the selected checkboxes to settings.
+ </summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.License_Options.ChbRegisterAll_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ Handles "Register All" checkbox changes, only updates checkboxes if NOT triggered by another checkbox.
+ </summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.License_Options.Chb_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ Handle individual checkbox state changes and update "Register All" safely.
+ </summary>
+</member>
+<member name="M:PROJECT_Assist_Common_Library.New_Project.BtnToggleTree_Click(System.Object,System.EventArgs)">
+ <summary>
+ code to work with treeview
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ 
+</member>
+</members>
+</doc>
