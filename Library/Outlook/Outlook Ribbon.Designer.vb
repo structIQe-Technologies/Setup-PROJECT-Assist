@@ -61,15 +61,15 @@
         Me.grp_TaskManager = Me.Factory.CreateRibbonGroup
         Me.Button13 = Me.Factory.CreateRibbonButton
         Me.Button15 = Me.Factory.CreateRibbonButton
-        Me.Group1 = Me.Factory.CreateRibbonGroup
+        Me.Group_Users = Me.Factory.CreateRibbonGroup
         Me.Button1 = Me.Factory.CreateRibbonButton
         Me.btnLicenseOptions = Me.Factory.CreateRibbonButton
+        Me.Button_Switch_Accounts = Me.Factory.CreateRibbonButton
         Me.grp_ProjectGroupSettings = Me.Factory.CreateRibbonGroup
-        Me.Button10 = Me.Factory.CreateRibbonButton
         Me.Button12 = Me.Factory.CreateRibbonButton
+        Me.Button10 = Me.Factory.CreateRibbonButton
         Me.Button9 = Me.Factory.CreateRibbonButton
         Me.grp_General = Me.Factory.CreateRibbonGroup
-        Me.Button_Check_for_Updates = Me.Factory.CreateRibbonButton
         Me.Button4 = Me.Factory.CreateRibbonButton
         Me.ButtonHelp = Me.Factory.CreateRibbonButton
         Me.TabstructIQe.SuspendLayout()
@@ -79,7 +79,7 @@
         Me.grp_DrawingManager.SuspendLayout()
         Me.grp_TimeManager.SuspendLayout()
         Me.grp_TaskManager.SuspendLayout()
-        Me.Group1.SuspendLayout()
+        Me.Group_Users.SuspendLayout()
         Me.grp_ProjectGroupSettings.SuspendLayout()
         Me.grp_General.SuspendLayout()
         Me.SuspendLayout()
@@ -92,7 +92,7 @@
         Me.TabstructIQe.Groups.Add(Me.grp_DrawingManager)
         Me.TabstructIQe.Groups.Add(Me.grp_TimeManager)
         Me.TabstructIQe.Groups.Add(Me.grp_TaskManager)
-        Me.TabstructIQe.Groups.Add(Me.Group1)
+        Me.TabstructIQe.Groups.Add(Me.Group_Users)
         Me.TabstructIQe.Groups.Add(Me.grp_ProjectGroupSettings)
         Me.TabstructIQe.Groups.Add(Me.grp_General)
         Me.TabstructIQe.KeyTip = "P"
@@ -114,9 +114,9 @@
         Me.btnNewProject.Label = "New"
         Me.btnNewProject.Name = "btnNewProject"
         Me.btnNewProject.OfficeImageId = "NewFolder"
-        Me.btnNewProject.ScreenTip = "New"
+        Me.btnNewProject.ScreenTip = "New Project"
         Me.btnNewProject.ShowImage = True
-        Me.btnNewProject.SuperTip = "Create a new project following your company's guidelines."
+        Me.btnNewProject.SuperTip = "Create a new project as per your company's guidelines."
         '
         'Button11
         '
@@ -125,7 +125,7 @@
         Me.Button11.Label = "Manage"
         Me.Button11.Name = "Button11"
         Me.Button11.OfficeImageId = "ArrangeByAssignment"
-        Me.Button11.ScreenTip = "Manage"
+        Me.Button11.ScreenTip = "Manage Projects"
         Me.Button11.ShowImage = True
         Me.Button11.SuperTip = "Manage your projects by viewing, editing, or updating project details as per your" &
     " requirements."
@@ -145,7 +145,7 @@
         Me.Button5.Label = "File"
         Me.Button5.Name = "Button5"
         Me.Button5.OfficeImageId = "MailMergeStartMailMergeMenu"
-        Me.Button5.ScreenTip = "File"
+        Me.Button5.ScreenTip = "File Mail(s)"
         Me.Button5.ShowImage = True
         '
         'Button6
@@ -155,7 +155,7 @@
         Me.Button6.Label = "Retrieve"
         Me.Button6.Name = "Button6"
         Me.Button6.OfficeImageId = "MailMergeWizard"
-        Me.Button6.ScreenTip = "Retrieve"
+        Me.Button6.ScreenTip = "Retrieve Mail(s)"
         Me.Button6.ShowImage = True
         '
         'grp_QualityManager
@@ -287,12 +287,13 @@
         Me.Button15.ScreenTip = "Company Policies"
         Me.Button15.ShowImage = True
         '
-        'Group1
+        'Group_Users
         '
-        Me.Group1.Items.Add(Me.Button1)
-        Me.Group1.Items.Add(Me.btnLicenseOptions)
-        Me.Group1.Label = "Settings"
-        Me.Group1.Name = "Group1"
+        Me.Group_Users.Items.Add(Me.Button1)
+        Me.Group_Users.Items.Add(Me.btnLicenseOptions)
+        Me.Group_Users.Items.Add(Me.Button_Switch_Accounts)
+        Me.Group_Users.Label = "User"
+        Me.Group_Users.Name = "Group_Users"
         '
         'Button1
         '
@@ -310,32 +311,30 @@
         '
         Me.btnLicenseOptions.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
         Me.btnLicenseOptions.KeyTip = "QC"
-        Me.btnLicenseOptions.Label = "License"
+        Me.btnLicenseOptions.Label = "LogIn"
         Me.btnLicenseOptions.Name = "btnLicenseOptions"
         Me.btnLicenseOptions.OfficeImageId = "InsertHighPrivilegeBlock"
-        Me.btnLicenseOptions.ScreenTip = "License"
+        Me.btnLicenseOptions.ScreenTip = "LogIn to your structIQe Account"
         Me.btnLicenseOptions.ShowImage = True
+        '
+        'Button_Switch_Accounts
+        '
+        Me.Button_Switch_Accounts.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button_Switch_Accounts.KeyTip = "QC"
+        Me.Button_Switch_Accounts.Label = "Switch"
+        Me.Button_Switch_Accounts.Name = "Button_Switch_Accounts"
+        Me.Button_Switch_Accounts.OfficeImageId = "Recurrence"
+        Me.Button_Switch_Accounts.ScreenTip = "Switch within your structIQe Accounts"
+        Me.Button_Switch_Accounts.ShowImage = True
         '
         'grp_ProjectGroupSettings
         '
-        Me.grp_ProjectGroupSettings.Items.Add(Me.Button10)
         Me.grp_ProjectGroupSettings.Items.Add(Me.Button12)
+        Me.grp_ProjectGroupSettings.Items.Add(Me.Button10)
         Me.grp_ProjectGroupSettings.Items.Add(Me.Button9)
         Me.grp_ProjectGroupSettings.Label = "Project Group"
         Me.grp_ProjectGroupSettings.Name = "grp_ProjectGroupSettings"
         Me.grp_ProjectGroupSettings.Visible = False
-        '
-        'Button10
-        '
-        Me.Button10.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button10.KeyTip = "QC"
-        Me.Button10.Label = "Create"
-        Me.Button10.Name = "Button10"
-        Me.Button10.OfficeImageId = "UpdateFolderList"
-        Me.Button10.ScreenTip = "Create"
-        Me.Button10.ShowImage = True
-        Me.Button10.SuperTip = "Create a New overarching Project Group to organize your projects or edit an exist" &
-    "ing one."
         '
         'Button12
         '
@@ -344,38 +343,38 @@
         Me.Button12.Label = "Users"
         Me.Button12.Name = "Button12"
         Me.Button12.OfficeImageId = "InviteAttendees"
-        Me.Button12.ScreenTip = "Users"
+        Me.Button12.ScreenTip = "Manage Users"
         Me.Button12.ShowImage = True
-        Me.Button12.SuperTip = "Manage users and define their roles within your company."
+        Me.Button12.SuperTip = "Manage users and define their roles within your company"
+        '
+        'Button10
+        '
+        Me.Button10.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button10.KeyTip = "QC"
+        Me.Button10.Label = "New"
+        Me.Button10.Name = "Button10"
+        Me.Button10.OfficeImageId = "UpdateFolderList"
+        Me.Button10.ScreenTip = "Create New Project Group"
+        Me.Button10.ShowImage = True
+        Me.Button10.SuperTip = "Create a New overarching Project Group to organize your projects"
         '
         'Button9
         '
         Me.Button9.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
         Me.Button9.KeyTip = "QC"
-        Me.Button9.Label = "Settings"
+        Me.Button9.Label = "Edit"
         Me.Button9.Name = "Button9"
         Me.Button9.OfficeImageId = "AnimationCustomActionVerbDialog"
-        Me.Button9.ScreenTip = "Settings"
+        Me.Button9.ScreenTip = "Edit Project Group Settings"
         Me.Button9.ShowImage = True
-        Me.Button9.SuperTip = "Modify your company preferences here."
+        Me.Button9.SuperTip = "Modify your Project Group settings/preferences"
         '
         'grp_General
         '
-        Me.grp_General.Items.Add(Me.Button_Check_for_Updates)
         Me.grp_General.Items.Add(Me.Button4)
         Me.grp_General.Items.Add(Me.ButtonHelp)
         Me.grp_General.Label = "General"
         Me.grp_General.Name = "grp_General"
-        '
-        'Button_Check_for_Updates
-        '
-        Me.Button_Check_for_Updates.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button_Check_for_Updates.KeyTip = "QC"
-        Me.Button_Check_for_Updates.Label = "Updates"
-        Me.Button_Check_for_Updates.Name = "Button_Check_for_Updates"
-        Me.Button_Check_for_Updates.OfficeImageId = "Recurrence"
-        Me.Button_Check_for_Updates.ScreenTip = "Updates"
-        Me.Button_Check_for_Updates.ShowImage = True
         '
         'Button4
         '
@@ -386,7 +385,6 @@
         Me.Button4.OfficeImageId = "Info"
         Me.Button4.ScreenTip = "About"
         Me.Button4.ShowImage = True
-        Me.Button4.SuperTip = "About PROJECT Assist and structIQe Technologies Pvt Ltd."
         '
         'ButtonHelp
         '
@@ -394,10 +392,10 @@
         Me.ButtonHelp.KeyTip = "QC"
         Me.ButtonHelp.Label = "Help"
         Me.ButtonHelp.Name = "ButtonHelp"
-        Me.ButtonHelp.OfficeImageId = "Info"
-        Me.ButtonHelp.ScreenTip = "Help"
+        Me.ButtonHelp.OfficeImageId = "Help"
+        Me.ButtonHelp.ScreenTip = "How to use structIQe's softwares. Some handy Tutorial!!"
         Me.ButtonHelp.ShowImage = True
-        Me.ButtonHelp.SuperTip = "About PROJECT Assist and structIQe Technologies Pvt Ltd."
+        Me.ButtonHelp.SuperTip = "How to use structIQe's softwares. Some handy Tutorial!!"
         '
         'StructIQe
         '
@@ -419,8 +417,8 @@
         Me.grp_TimeManager.PerformLayout()
         Me.grp_TaskManager.ResumeLayout(False)
         Me.grp_TaskManager.PerformLayout()
-        Me.Group1.ResumeLayout(False)
-        Me.Group1.PerformLayout()
+        Me.Group_Users.ResumeLayout(False)
+        Me.Group_Users.PerformLayout()
         Me.grp_ProjectGroupSettings.ResumeLayout(False)
         Me.grp_ProjectGroupSettings.PerformLayout()
         Me.grp_General.ResumeLayout(False)
@@ -432,7 +430,7 @@
     Friend WithEvents TabstructIQe As Microsoft.Office.Tools.Ribbon.RibbonTab
     Friend WithEvents grp_QualityManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents btnSubmit_for_QC As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents Group1 As Microsoft.Office.Tools.Ribbon.RibbonGroup
+    Friend WithEvents Group_Users As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button2 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents grp_ProjectManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
@@ -453,7 +451,7 @@
     Friend WithEvents Button12 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents grp_TaskManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button13 As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents Button_Check_for_Updates As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Button_Switch_Accounts As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button15 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button16 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button17 As Microsoft.Office.Tools.Ribbon.RibbonButton

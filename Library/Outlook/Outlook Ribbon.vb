@@ -11,12 +11,6 @@ Public Class StructIQe
     Private DeferTimer As Timer
     Private StartupSw As New Stopwatch()
 
-    Private Sub Button14_Click(sender As Object, e As RibbonControlEventArgs) Handles Button_Check_for_Updates.Click
-
-        Program_Controls.UPDATE_Program()
-
-    End Sub
-
     Private Sub StructIQe_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
 
         TabstructIQe.Label = SettingsHelper.App_Name
@@ -54,6 +48,40 @@ Public Class StructIQe
             sw.Stop()
         End Try
     End Sub
+
+    Async Sub Refresh_Ribbon_As_per_permissions()
+
+        If SupabaseHelper.IsOnline() = False Then
+            Hide_all_buttons()
+            Exit Sub
+        End If
+
+        System.Windows.Forms.Cursor.Current = Cursors.WaitCursor
+
+        Dim access = Await SupabaseHelper.TryAutoLoginAsync()
+
+        If access Is Nothing Then
+            Hide_all_buttons()
+            Dim res = SharedRibbonButtons.User_Login()
+            If res Is Nothing Then
+                System.Windows.Forms.Cursor.Current = Cursors.Default
+                Exit Sub
+            ElseIf res = True Then
+                access = SharedRibbonButtons.CurrentAccess
+                SharedRibbonButtons.Update_app_name()
+            Else
+                access = Nothing
+            End If
+
+        End If
+
+
+        Reset_ribbon_from_Database(access)
+
+        System.Windows.Forms.Cursor.Current = Cursors.Default
+
+    End Sub
+
     Sub Hide_all_buttons()
         btnNewProject.Visible = False
         grp_ProjectManager.Visible = False
@@ -64,43 +92,6 @@ Public Class StructIQe
         grp_TaskManager.Visible = False
         grp_ProjectGroupSettings.Visible = False
         grp_General.Visible = False
-    End Sub
-    Async Sub Refresh_Ribbon_As_per_permissions()
-
-        Dim access = Await SupabaseHelper.TryAutoLoginAsync()
-
-        If access Is Nothing Then
-            Hide_all_buttons()
-            Dim res = SharedRibbonButtons.User_Login()
-            If res Is Nothing Then
-                Exit Sub
-            ElseIf res = True Then
-                access = SharedRibbonButtons.CurrentAccess
-                SharedRibbonButtons.update_app_name()
-            Else
-                access = Nothing
-            End If
-
-        End If
-
-
-        Reset_ribbon_from_Database(access)
-
-        'Dim settings = AppSettings.LoadSettings()
-
-        'If settings.User_Name = Nothing Then
-
-        '    grpProjectManager.Visible = False
-        '    grp_MailManager.Visible = False
-        '    grp_QualityButtons.Visible = False
-        '    grpTimeManager.Visible = False
-        '    grp_TaskManager.Visible = False
-        'Else
-
-        '    Reset_ribbon()
-
-        'End If
-
     End Sub
 
     'Sub Reset_ribbon()
@@ -147,10 +138,13 @@ Public Class StructIQe
 
     Sub Reset_ribbon_from_Database(access As EffectiveAccessDto)
 
+        System.Windows.Forms.Cursor.Current = Cursors.WaitCursor
+
         SharedRibbonButtons.CurrentAccess = access
 
         If access Is Nothing Then
             Hide_all_buttons()
+            Cursor.Current = Cursors.Default
             Exit Sub
         End If
         ' Always show Project Manager group, but toggle buttons inside
@@ -165,6 +159,7 @@ Public Class StructIQe
 
         If access.EffPaEnabled = False Then
             Hide_all_buttons()
+            Cursor.Current = Cursors.Default
             Exit Sub
         End If
 
@@ -181,6 +176,7 @@ Public Class StructIQe
         grp_TaskManager.Visible = SupabaseHelper.Has(access, "tasks")
         grp_ProjectGroupSettings.Visible = SupabaseHelper.Has(access, "project_group_manager")
 
+        Cursor.Current = Cursors.Default
         '' Projects → controlled by effective access
         'If access.EffPaProjects Then
         '    btnNewProject.Visible = True
@@ -289,8 +285,12 @@ Public Class StructIQe
 
     End Sub
 
-
     Private Sub Button7_Click(sender As Object, e As RibbonControlEventArgs) Handles btnLicenseOptions.Click
+
+
+        If SupabaseHelper.IsOnline() = False Then
+            Exit Sub
+        End If
 
         'SharedRibbonButtons.Button_License_Options()
 
@@ -363,9 +363,16 @@ Public Class StructIQe
         SharedRibbonButtons.Button_Help()
     End Sub
 
-    'Private Sub Login(sender As Object, e As RibbonControlEventArgs)
+    Private Sub Button_Switch_Accounts_Click(sender As Object, e As RibbonControlEventArgs) Handles Button_Switch_Accounts.Click
 
-    '    Reset_ribbon_from_Database(SharedRibbonButtons.User_Login())
+        If SupabaseHelper.IsOnline() = False Then
+            Exit Sub
+        End If
 
-    'End Sub
+        If SharedRibbonButtons.Button_Switch_User() Then
+            Refresh_Ribbon_As_per_permissions()
+        End If
+
+
+    End Sub
 End Class
