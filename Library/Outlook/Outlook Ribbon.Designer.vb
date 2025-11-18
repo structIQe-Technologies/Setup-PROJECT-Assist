@@ -62,7 +62,6 @@
         Me.Button13 = Me.Factory.CreateRibbonButton
         Me.Button15 = Me.Factory.CreateRibbonButton
         Me.Group_Users = Me.Factory.CreateRibbonGroup
-        Me.Button1 = Me.Factory.CreateRibbonButton
         Me.btnLicenseOptions = Me.Factory.CreateRibbonButton
         Me.Button_Switch_Accounts = Me.Factory.CreateRibbonButton
         Me.grp_ProjectGroupSettings = Me.Factory.CreateRibbonGroup
@@ -289,23 +288,10 @@
         '
         'Group_Users
         '
-        Me.Group_Users.Items.Add(Me.Button1)
         Me.Group_Users.Items.Add(Me.btnLicenseOptions)
         Me.Group_Users.Items.Add(Me.Button_Switch_Accounts)
         Me.Group_Users.Label = "User"
         Me.Group_Users.Name = "Group_Users"
-        '
-        'Button1
-        '
-        Me.Button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button1.KeyTip = "QC"
-        Me.Button1.Label = "User"
-        Me.Button1.Name = "Button1"
-        Me.Button1.OfficeImageId = "AccountSettings"
-        Me.Button1.ScreenTip = "User"
-        Me.Button1.ShowImage = True
-        Me.Button1.SuperTip = "Update user settings such as Username, Project Group, Project directory, and more" &
-    "."
         '
         'btnLicenseOptions
         '
@@ -431,7 +417,6 @@
     Friend WithEvents grp_QualityManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents btnSubmit_for_QC As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Group_Users As Microsoft.Office.Tools.Ribbon.RibbonGroup
-    Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button2 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents grp_ProjectManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents btnNewProject As Microsoft.Office.Tools.Ribbon.RibbonButton

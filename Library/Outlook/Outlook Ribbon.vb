@@ -1,14 +1,14 @@
-﻿Imports Microsoft.Office.Tools.Ribbon
+﻿Imports System.Diagnostics
+Imports System.Net
+Imports System.Threading
+Imports System.Windows.Forms
+Imports Microsoft.Office.Tools.Ribbon
 Imports PROJECT_Assist_Common_Library
 Imports structIQe_Common_Library
 
-Imports System.Diagnostics
-Imports System.Net
-Imports System.Windows.Forms
-
 Public Class StructIQe
 
-    Private DeferTimer As Timer
+    Private DeferTimer As Windows.Forms.Timer
     Private StartupSw As New Stopwatch()
 
     Private Sub StructIQe_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
@@ -21,7 +21,7 @@ Public Class StructIQe
 
         Try
             ' 3) Defer all heavy/fragile work (MAPI folder access, disk, network)
-            DeferTimer = New Timer() With {.Interval = 2000}  ' 2s after Outlook is up
+            DeferTimer = New Windows.Forms.Timer() With {.Interval = 2000}  ' 2s after Outlook is up
             AddHandler DeferTimer.Tick, AddressOf DeferredInit
             DeferTimer.Start()
 
@@ -246,7 +246,7 @@ Public Class StructIQe
 
     Private Sub Button5_Click(sender As Object, e As RibbonControlEventArgs) Handles Button5.Click
 
-        Shared_MailManagement_Class.Button_File_mails()
+        ThisAddIn.Button_File_mails()
 
     End Sub
 
@@ -277,13 +277,13 @@ Public Class StructIQe
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As RibbonControlEventArgs) Handles Button1.Click
+    'Private Sub Button1_Click(sender As Object, e As RibbonControlEventArgs) Handles Button1.Click
 
-        SharedRibbonButtons.Button_User_Settings()
+    '    SharedRibbonButtons.Button_User_Settings()
 
-        Refresh_Ribbon_As_per_permissions()
+    '    Refresh_Ribbon_As_per_permissions()
 
-    End Sub
+    'End Sub
 
     Private Sub Button7_Click(sender As Object, e As RibbonControlEventArgs) Handles btnLicenseOptions.Click
 
