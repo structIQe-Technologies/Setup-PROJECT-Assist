@@ -22,10 +22,5 @@ PROJECT Assist Common Library
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="M:PROJECT_Assist_Common_Library.Shared_Userform_Routines.BuildTreeViewFromJson(System.Windows.Forms.TreeView,System.Object)">
- <summary>
- Converts JSON into ProjectFolderEntry and populates the TreeView directly.
- </summary>
-</member>
 </members>
 </doc>

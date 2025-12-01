@@ -15,8 +15,6 @@ Public Class StructIQe
 
         TabstructIQe.Label = SettingsHelper.App_Name
 
-        'Refresh_Ribbon_As_per_permissions()
-
         StartupSw.Start()
 
         Try
@@ -94,48 +92,6 @@ Public Class StructIQe
         grp_General.Visible = False
     End Sub
 
-    'Sub Reset_ribbon()
-
-    '    'Load the settings from the JSON file
-    '    Dim settings = AppSettings.LoadSettings()
-
-    '    grp_ProjectManager.Visible = True
-
-
-    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Project_Manager) = False Or settings.Project_management_license_Check = False Then
-    '        btnNewProject.Visible = False
-    '    Else
-    '        btnNewProject.Visible = True
-    '    End If
-    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Mail_Manager) = False Or settings.Mail_management_license_Check = False Then
-    '        grp_MailManager.Visible = False
-    '    Else
-    '        grp_MailManager.Visible = True
-    '    End If
-    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Quality_Manager) = False Or settings.Quality_management_license_Check = False Then
-    '        grp_QualityManager.Visible = False
-    '    Else
-    '        grp_QualityManager.Visible = True
-    '    End If
-    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Time_Manager) = False Or settings.Time_management_license_Check = False Then
-    '        grp_TimeManager.Visible = False
-    '    Else
-    '        grp_TimeManager.Visible = True
-    '    End If
-    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Task_Manager) = False Or settings.Task_management_license_Check = False Then
-    '        grp_TaskManager.Visible = False
-    '    Else
-    '        grp_TaskManager.Visible = True
-    '    End If
-
-    '    If SharedClass.LICENSE_check_silent(SettingsHelper.License_Project_Group_Manager) = False Then
-    '        grp_ProjectGroupSettings.Visible = False
-    '    Else
-    '        grp_ProjectGroupSettings.Visible = True
-    '    End If
-
-    'End Sub
-
     Sub Reset_ribbon_from_Database(access As EffectiveAccessDto)
 
         System.Windows.Forms.Cursor.Current = Cursors.WaitCursor
@@ -147,10 +103,6 @@ Public Class StructIQe
             Cursor.Current = Cursors.Default
             Exit Sub
         End If
-        ' Always show Project Manager group, but toggle buttons inside
-        'MsgBox("Name" & access.Project_Assist_Name)
-        'TabstructIQe.Label = access.Project_Assist_Name
-        'TabstructIQe.Visible = True
 
         SharedRibbonButtons.update_app_name()
 
@@ -177,58 +129,6 @@ Public Class StructIQe
         grp_ProjectGroupSettings.Visible = SupabaseHelper.Has(access, "project_group_manager")
 
         Cursor.Current = Cursors.Default
-        '' Projects → controlled by effective access
-        'If access.EffPaProjects Then
-        '    btnNewProject.Visible = True
-        'Else
-        '    btnNewProject.Visible = False
-        'End If
-
-        '' Mail Manager group
-        'If access.EffPaMail Then
-        '    grp_MailManager.Visible = True
-        'Else
-        '    grp_MailManager.Visible = False
-
-        'End If
-
-        '' Quality Manager group
-        'If access.EffPaQuality Then
-        '    grp_QualityManager.Visible = True
-        'Else
-        '    grp_QualityManager.Visible = False
-        'End If
-
-        ''Drawing Manager Group
-        'If access.EffPaDrawings Then
-        '    grp_DrawingManager.Visible = True
-        'Else
-        '    grp_DrawingManager.Visible = False
-        'End If
-
-        '' Time Manager group
-        'If access.EffPaTimesheet Then
-        '    grp_TimeManager.Visible = True
-        'Else
-        '    grp_TimeManager.Visible = False
-
-        'End If
-
-        '' Task Manager group
-        'If access.EffPaTasks Then
-        '    grp_TaskManager.Visible = True
-        'Else
-        '    grp_TaskManager.Visible = False
-        'End If
-
-        '' Company Settings (still purely license based for now)
-
-        'If access.EffPaProjectGroupManager Then
-        '    grp_ProjectGroupSettings.Visible = True
-        'Else
-        '    grp_ProjectGroupSettings.Visible = False
-        'End If
-
 
     End Sub
     Private Sub BtnNewProject_Click(sender As Object, e As RibbonControlEventArgs) Handles btnNewProject.Click
@@ -277,24 +177,12 @@ Public Class StructIQe
 
     End Sub
 
-    'Private Sub Button1_Click(sender As Object, e As RibbonControlEventArgs) Handles Button1.Click
-
-    '    SharedRibbonButtons.Button_User_Settings()
-
-    '    Refresh_Ribbon_As_per_permissions()
-
-    'End Sub
-
     Private Sub Button7_Click(sender As Object, e As RibbonControlEventArgs) Handles btnLicenseOptions.Click
 
 
         If SupabaseHelper.IsOnline() = False Then
             Exit Sub
         End If
-
-        'SharedRibbonButtons.Button_License_Options()
-
-        'Call Reset_ribbon()
 
         Dim access
 
