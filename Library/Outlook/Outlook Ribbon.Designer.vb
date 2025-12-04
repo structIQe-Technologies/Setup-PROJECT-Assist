@@ -71,6 +71,7 @@
         Me.grp_General = Me.Factory.CreateRibbonGroup
         Me.Button4 = Me.Factory.CreateRibbonButton
         Me.ButtonHelp = Me.Factory.CreateRibbonButton
+        Me.ButtonRefresh = Me.Factory.CreateRibbonButton
         Me.TabstructIQe.SuspendLayout()
         Me.grp_ProjectManager.SuspendLayout()
         Me.grp_MailManager.SuspendLayout()
@@ -309,7 +310,7 @@
         Me.Button_Switch_Accounts.KeyTip = "QC"
         Me.Button_Switch_Accounts.Label = "Switch"
         Me.Button_Switch_Accounts.Name = "Button_Switch_Accounts"
-        Me.Button_Switch_Accounts.OfficeImageId = "Recurrence"
+        Me.Button_Switch_Accounts.OfficeImageId = "RelatedTasksLayoutNow"
         Me.Button_Switch_Accounts.ScreenTip = "Switch within your structIQe Accounts"
         Me.Button_Switch_Accounts.ShowImage = True
         '
@@ -359,6 +360,7 @@
         '
         Me.grp_General.Items.Add(Me.Button4)
         Me.grp_General.Items.Add(Me.ButtonHelp)
+        Me.grp_General.Items.Add(Me.ButtonRefresh)
         Me.grp_General.Label = "General"
         Me.grp_General.Name = "grp_General"
         '
@@ -382,6 +384,16 @@
         Me.ButtonHelp.ScreenTip = "How to use structIQe's softwares. Some handy Tutorial!!"
         Me.ButtonHelp.ShowImage = True
         Me.ButtonHelp.SuperTip = "How to use structIQe's softwares. Some handy Tutorial!!"
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.ButtonRefresh.KeyTip = "QC"
+        Me.ButtonRefresh.Label = "Refresh"
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.OfficeImageId = "Recurrence"
+        Me.ButtonRefresh.ScreenTip = "Refresh"
+        Me.ButtonRefresh.ShowImage = True
         '
         'StructIQe
         '
@@ -443,6 +455,7 @@
     Friend WithEvents grp_DrawingManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button18 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonHelp As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents ButtonRefresh As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection
