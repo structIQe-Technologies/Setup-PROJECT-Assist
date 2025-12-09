@@ -1,4 +1,5 @@
-﻿Imports System.Diagnostics
+﻿Imports System.ComponentModel.Design
+Imports System.Diagnostics
 Imports System.Net
 Imports System.Threading
 Imports System.Windows.Forms
@@ -104,7 +105,7 @@ Public Class StructIQe
             Exit Sub
         End If
 
-        SharedRibbonButtons.update_app_name()
+        SharedRibbonButtons.Update_app_name()
 
         TabstructIQe.Label = If(String.IsNullOrWhiteSpace(access.Project_Assist_Name),
                             SettingsHelper.App_Name, access.Project_Assist_Name)
@@ -261,6 +262,12 @@ Public Class StructIQe
             Refresh_Ribbon_As_per_permissions()
         End If
 
+
+    End Sub
+
+    Private Async Sub ButtonRefresh_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonRefresh.Click
+
+        Await Cache_Builder.EnsureCache(SharedRibbonButtons.CurrentAccess.CompanyId, forceReload:=True).ConfigureAwait(False)
 
     End Sub
 End Class
