@@ -32,6 +32,16 @@ stqform
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:stqform.My.Resources.Resources.left_indent">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:stqform.My.Resources.Resources.right_indent">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="M:stqform.CheckboxesFieldControl.PopulateCheckboxes(System.Collections.Generic.List{System.String})">
  <summary>
  Clears and repopulates the FlowLayoutPanel with the current options.
