@@ -3,6 +3,7 @@ Imports System.Diagnostics
 Imports System.Net
 Imports System.Threading
 Imports System.Windows.Forms
+Imports Common_Library
 Imports Microsoft.Office.Tools.Ribbon
 Imports PROJECT_Assist_Common_Library
 Imports structIQe_Common_Library
@@ -14,7 +15,7 @@ Public Class StructIQe
 
     Private Sub StructIQe_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
 
-        TabstructIQe.Label = SettingsHelper.App_Name
+        TabstructIQe.Label = Shared_Settings.App_Name
 
         StartupSw.Start()
 
@@ -66,8 +67,8 @@ Public Class StructIQe
                 System.Windows.Forms.Cursor.Current = Cursors.Default
                 Exit Sub
             ElseIf res = True Then
-                access = SharedRibbonButtons.CurrentAccess
-                SharedRibbonButtons.Update_app_name()
+                access = Shared_Settings.CurrentAccess
+                Shared_Settings.Update_app_name()
             Else
                 access = Nothing
             End If
@@ -97,7 +98,7 @@ Public Class StructIQe
 
         System.Windows.Forms.Cursor.Current = Cursors.WaitCursor
 
-        SharedRibbonButtons.CurrentAccess = access
+        Shared_Settings.CurrentAccess = access
 
         If access Is Nothing Then
             Hide_all_buttons()
@@ -105,10 +106,10 @@ Public Class StructIQe
             Exit Sub
         End If
 
-        SharedRibbonButtons.Update_app_name()
+        Shared_Settings.Update_app_name()
 
         TabstructIQe.Label = If(String.IsNullOrWhiteSpace(access.Project_Assist_Name),
-                            SettingsHelper.App_Name, access.Project_Assist_Name)
+                            Shared_Settings.app_name, access.Project_Assist_Name)
 
         If access.EffPaEnabled = False Then
             Hide_all_buttons()
@@ -153,7 +154,7 @@ Public Class StructIQe
 
     Private Sub Button6_Click(sender As Object, e As RibbonControlEventArgs) Handles Button6.Click
 
-        Shared_MailManagement_Class.Button_Retrieve_mails()
+        SharedRibbonButtons.Button_Retrieve_mails()
 
     End Sub
 
@@ -166,7 +167,7 @@ Public Class StructIQe
 
     Private Sub Button2_Click(sender As Object, e As RibbonControlEventArgs) Handles Button2.Click
 
-        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
 
         ' SharedQualityCheckClass.Button_Submit_QC_Status()
 
@@ -191,7 +192,7 @@ Public Class StructIQe
         If res Is Nothing Then
             Exit Sub
         ElseIf res = True Then
-            access = SharedRibbonButtons.CurrentAccess
+            access = Shared_Settings.CurrentAccess
         Else
             access = Nothing
         End If
@@ -225,25 +226,25 @@ Public Class StructIQe
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As RibbonControlEventArgs) Handles Button13.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
 
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As RibbonControlEventArgs) Handles Button15.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As RibbonControlEventArgs) Handles Button16.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As RibbonControlEventArgs) Handles Button8.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As RibbonControlEventArgs) Handles Button18.Click
 
-        MsgBox("Under Development", MsgBoxStyle.Information, SettingsHelper.App_Name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
 
         'SharedRibbonButtons.Button_Manage_Drawings()
     End Sub
@@ -267,7 +268,7 @@ Public Class StructIQe
 
     Private Async Sub ButtonRefresh_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonRefresh.Click
 
-        Await Cache_Builder.EnsureCache(SharedRibbonButtons.CurrentAccess.CompanyId, forceReload:=True).ConfigureAwait(False)
+        Await Common_Library.Cache_Builder.EnsureCache(Shared_Settings.CurrentAccess.CompanyId, forceReload:=True).ConfigureAwait(False)
 
     End Sub
 End Class
