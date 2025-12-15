@@ -32,12 +32,27 @@ stqform
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:stqform.My.Resources.Resources.increase">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:stqform.My.Resources.Resources.left_indent">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:stqform.My.Resources.Resources.LIndent">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:stqform.My.Resources.Resources.right_indent">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:stqform.My.Resources.Resources.RIndent">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
