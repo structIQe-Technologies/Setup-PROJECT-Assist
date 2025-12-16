@@ -278,14 +278,14 @@ Public Class StructIQe
         SharedRibbonButtons.Button_Help()
     End Sub
 
-    Private Sub Button_Switch_Accounts_Click(sender As Object, e As RibbonControlEventArgs) Handles Button_Switch_Accounts.Click
+    Private Async Sub Button_Switch_Accounts_Click(sender As Object, e As RibbonControlEventArgs) Handles Button_Switch_Accounts.Click
 
         If SupabaseHelper.IsOnline() = False Then
             Exit Sub
         End If
 
         If SharedRibbonButtons.Button_Switch_User() Then
-            Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
+            Await Refresh_Ribbon_As_per_permissions()
         End If
 
     End Sub
