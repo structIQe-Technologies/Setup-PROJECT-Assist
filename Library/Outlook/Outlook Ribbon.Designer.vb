@@ -62,7 +62,7 @@
         Me.Button13 = Me.Factory.CreateRibbonButton
         Me.Button15 = Me.Factory.CreateRibbonButton
         Me.Group_Users = Me.Factory.CreateRibbonGroup
-        Me.btnLicenseOptions = Me.Factory.CreateRibbonButton
+        Me.ButtonLogin = Me.Factory.CreateRibbonButton
         Me.Button_Switch_Accounts = Me.Factory.CreateRibbonButton
         Me.grp_ProjectGroupSettings = Me.Factory.CreateRibbonGroup
         Me.Button12 = Me.Factory.CreateRibbonButton
@@ -289,20 +289,20 @@
         '
         'Group_Users
         '
-        Me.Group_Users.Items.Add(Me.btnLicenseOptions)
+        Me.Group_Users.Items.Add(Me.ButtonLogin)
         Me.Group_Users.Items.Add(Me.Button_Switch_Accounts)
         Me.Group_Users.Label = "User"
         Me.Group_Users.Name = "Group_Users"
         '
-        'btnLicenseOptions
+        'ButtonLogin
         '
-        Me.btnLicenseOptions.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnLicenseOptions.KeyTip = "QC"
-        Me.btnLicenseOptions.Label = "LogIn"
-        Me.btnLicenseOptions.Name = "btnLicenseOptions"
-        Me.btnLicenseOptions.OfficeImageId = "InsertHighPrivilegeBlock"
-        Me.btnLicenseOptions.ScreenTip = "LogIn to your structIQe Account"
-        Me.btnLicenseOptions.ShowImage = True
+        Me.ButtonLogin.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.ButtonLogin.KeyTip = "QC"
+        Me.ButtonLogin.Label = "LogIn"
+        Me.ButtonLogin.Name = "ButtonLogin"
+        Me.ButtonLogin.OfficeImageId = "InsertHighPrivilegeBlock"
+        Me.ButtonLogin.ScreenTip = "LogIn to your structIQe Account"
+        Me.ButtonLogin.ShowImage = True
         '
         'Button_Switch_Accounts
         '
@@ -436,7 +436,7 @@
     Friend WithEvents grp_MailManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button5 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button6 As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents btnLicenseOptions As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents ButtonLogin As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents grp_TimeManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button7 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button8 As Microsoft.Office.Tools.Ribbon.RibbonButton
