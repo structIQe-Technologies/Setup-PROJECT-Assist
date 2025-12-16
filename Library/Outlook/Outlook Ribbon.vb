@@ -2,6 +2,7 @@
 Imports System.Diagnostics
 Imports System.Net
 Imports System.Threading
+Imports System.Threading.Tasks
 Imports System.Windows.Forms
 Imports Common_Library
 Imports Microsoft.Office.Tools.Ribbon
@@ -41,7 +42,7 @@ Public Class StructIQe
 
         Try
 
-            Refresh_Ribbon_As_per_permissions()
+            Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         Catch ex As System.Exception
         Finally
@@ -49,11 +50,11 @@ Public Class StructIQe
         End Try
     End Sub
 
-    Async Sub Refresh_Ribbon_As_per_permissions()
+    Async Function Refresh_Ribbon_As_per_permissions() As Task(Of Boolean)
 
         If SupabaseHelper.IsOnline() = False Then
             Hide_all_buttons()
-            Exit Sub
+            Return False
         End If
 
         System.Windows.Forms.Cursor.Current = Cursors.WaitCursor
@@ -65,7 +66,7 @@ Public Class StructIQe
             Dim res = SharedRibbonButtons.User_Login()
             If res Is Nothing Then
                 System.Windows.Forms.Cursor.Current = Cursors.Default
-                Exit Sub
+                Return False
             ElseIf res = True Then
                 access = Shared_Settings.CurrentAccess
                 Shared_Settings.Update_app_name()
@@ -79,7 +80,9 @@ Public Class StructIQe
 
         System.Windows.Forms.Cursor.Current = Cursors.Default
 
-    End Sub
+        Return True
+
+    End Function
 
     Sub Hide_all_buttons()
         btnNewProject.Visible = False
@@ -108,7 +111,7 @@ Public Class StructIQe
         Shared_Settings.Update_app_name()
 
         TabstructIQe.Label = If(String.IsNullOrWhiteSpace(access.Project_Assist_Name),
-                            Shared_Settings.app_name, access.Project_Assist_Name)
+                            Shared_Settings.App_Name, access.Project_Assist_Name)
 
         If access.EffPaEnabled = False Then
             Hide_all_buttons()
@@ -134,7 +137,7 @@ Public Class StructIQe
     End Sub
     Private Sub BtnNewProject_Click(sender As Object, e As RibbonControlEventArgs) Handles btnNewProject.Click
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         SharedRibbonButtons.Button_New_Project(False)
 
@@ -142,7 +145,7 @@ Public Class StructIQe
 
     Private Sub Button11_Click(sender As Object, e As RibbonControlEventArgs) Handles Button11.Click
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         SharedRibbonButtons.Button_Manage_Projects()
 
@@ -151,7 +154,7 @@ Public Class StructIQe
 
     Private Sub Button5_Click(sender As Object, e As RibbonControlEventArgs) Handles Button5.Click
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         ThisAddIn.Button_File_mails()
 
@@ -159,7 +162,7 @@ Public Class StructIQe
 
     Private Sub Button6_Click(sender As Object, e As RibbonControlEventArgs) Handles Button6.Click
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         SharedRibbonButtons.Button_Retrieve_mails()
 
@@ -168,7 +171,7 @@ Public Class StructIQe
 
     Private Sub BtnSubmit_for_QC_Click(sender As Object, e As RibbonControlEventArgs) Handles btnSubmit_for_QC.Click
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         SharedQualityCheckClass.Button_Submit_for_QC("", "")
 
@@ -176,7 +179,7 @@ Public Class StructIQe
 
     Private Sub Button2_Click(sender As Object, e As RibbonControlEventArgs) Handles Button2.Click
 
-        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.App_Name)
 
         ' SharedQualityCheckClass.Button_Submit_QC_Status()
 
@@ -184,7 +187,7 @@ Public Class StructIQe
 
     Private Sub Button17_Click(sender As Object, e As RibbonControlEventArgs) Handles Button17.Click
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         SharedQualityCheckClass.Button_Review_QC_Status()
 
@@ -214,8 +217,8 @@ Public Class StructIQe
 
     Private Sub Button9_Click(sender As Object, e As RibbonControlEventArgs) Handles Button9.Click
 
-        SecureStore.RestoreLastActiveSessionAndApplyToken(persist:=True)
-        Refresh_Ribbon_As_per_permissions()
+        'SecureStore.RestoreLastActiveSessionAndApplyToken(persist:=True)
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         SharedRibbonButtons.Button_ProjectGroup_Edit_Settings()
 
@@ -224,7 +227,7 @@ Public Class StructIQe
     Private Sub Button4_Click(sender As Object, e As RibbonControlEventArgs) Handles Button4.Click
 
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         SharedRibbonButtons.Button_About_Box()
 
@@ -232,46 +235,46 @@ Public Class StructIQe
 
     Private Sub Button12_Click(sender As Object, e As RibbonControlEventArgs) Handles Button12.Click
         'SecureStore.RestoreLastActiveSessionAndApplyToken(persist:=True)
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
         SharedRibbonButtons.Button_User_Profiles()
     End Sub
 
     Private Sub Button7_Click_1(sender As Object, e As RibbonControlEventArgs) Handles Button7.Click
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
         SharedRibbonButtons.Button_Submit_Timesheet()
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As RibbonControlEventArgs) Handles Button10.Click
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
         SharedRibbonButtons.Button_New_Project_Group()
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As RibbonControlEventArgs) Handles Button13.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.App_Name)
 
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As RibbonControlEventArgs) Handles Button15.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.App_Name)
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As RibbonControlEventArgs) Handles Button16.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.App_Name)
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As RibbonControlEventArgs) Handles Button8.Click
-        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.App_Name)
     End Sub
 
     Private Sub Button18_Click(sender As Object, e As RibbonControlEventArgs) Handles Button18.Click
 
-        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.app_name)
+        MsgBox("Under Development", MsgBoxStyle.Information, Shared_Settings.App_Name)
 
         'SharedRibbonButtons.Button_Manage_Drawings()
     End Sub
 
     Private Sub ButtonHelp_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonHelp.Click
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
         SharedRibbonButtons.Button_Help()
     End Sub
 
@@ -282,14 +285,14 @@ Public Class StructIQe
         End If
 
         If SharedRibbonButtons.Button_Switch_User() Then
-            Refresh_Ribbon_As_per_permissions()
+            Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
         End If
 
     End Sub
 
     Private Async Sub ButtonRefresh_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonRefresh.Click
 
-        Refresh_Ribbon_As_per_permissions()
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
 
         Await Common_Library.Cache_Builder.EnsureCache(Shared_Settings.CurrentAccess.CompanyId, forceReload:=True).ConfigureAwait(False)
 
