@@ -433,7 +433,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ILXkM9hnuPzcTcA/V95BnpCGxudrNZUCMKCtFHGyx04=</dsig:DigestValue>
+        <dsig:DigestValue>Y/UYpUipTQa3IM0CZEYGYnc/+wemXqU27WAH/ZF2LwM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -450,26 +450,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stqcolib.dll" size="289792">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stqcolib.dll" size="291328">
       <assemblyIdentity name="stqcolib" version="1.0.0.0" publicKeyToken="C3A2E330F1FF8DB8" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Z2LR2LZL7wQ1RQ2jlKCCtu3/mn0YBz0oR1nfpjUq74Y=</dsig:DigestValue>
+        <dsig:DigestValue>mGrEz/lYGsHZkYTDCi70d6+q/QvKylmeRxGX7GBdBR8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stqcomlib.dll" size="197632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stqcomlib.dll" size="191488">
       <assemblyIdentity name="stqcomlib" version="1.0.0.0" publicKeyToken="4198964EBF4ECB51" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kqUvbE7raatklmjRB4Swfx9aUPYMIODqoDJ6kgLy9Mc=</dsig:DigestValue>
+        <dsig:DigestValue>blxnPhvSFWkDM6lqwAoTG4gk9yAwdHV2gc+T2eapPu8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -486,14 +486,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stqpacolib.dll" size="535552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stqpacolib.dll" size="539136">
       <assemblyIdentity name="stqpacolib" version="1.1.1.0" publicKeyToken="03A41CC51E673506" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kE+vgcoNmN8F5nL11X1i8hs6+vDrPVFDe4k/i4oE1mo=</dsig:DigestValue>
+        <dsig:DigestValue>+LqlTwDazIInwsw/35JDW2abiiyPmYCW2gb18CrkVKc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -678,4 +678,4 @@
       </vstov4:customizations>
     </vstav3:application>
   </vstav3:addIn>
-<publisherIdentity name="CN=MCSPL-HO\LENOVO" issuerKeyHash="008589cc243f9d84b648f44afb9d8ad811090cf9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>U5cVWU/x+ve7k5sDyhMIoWKd2HUJSEycndDcR6qrZvU=</DigestValue></Reference></SignedInfo><SignatureValue>XbpCIpZ6P5TeZjBKqSy/y+Hqml6pJGqIy2rBbowHGh/r3zkX8z7yE6WAuUMzpokoe7VF8TDqfiCPJ+VH7Fc9SJ2knonnRhswU3Y1ulk0/Kcp27chVMuOVyqLPTEBuhhwaz4EzHgDm+zR1Wr6EAmgySBXXOuy44ix27Wjvkk+a8w=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>yTlOQ5vOe/QBsSEPtJTcBiuvgDqmGWzq6wN9SC0EEijeTtR59Jhqo2ogbDgG4Dh/q9O77qUp/5fuGku95p0CPoXWtYpt666DCkqkISRlI1SzXtzQRPLC/qBnb/QRPg2ImS36u0Y8raSLv5fZuKXVO4wFqXtNBpQxlwPuyRs2btk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f566abaa47dcd09d9c4c480975d89d62a10813ca039b93bbf7faf14f59159753" Description="" Url=""><as:assemblyIdentity name="PROJECT Assist Outlook.dll" version="1.1.1.0" publicKeyToken="13316f5ee44bb159" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MCSPL-HO\LENOVO</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>6RtN1F1uEeDaxvSMMoN6jwZyyDBfMcjm71StU3jMFsA=</DigestValue></Reference></SignedInfo><SignatureValue>Gg0gLnGJTtknu6zdGpMk8j5e5/IPXAYngo/QUZMzarHoU5926SOZ+jnbqrqOk+bjqJwv17YqoCpgzEqkJLe1rhf6phnc3zA6juzzPEFhG/eyI67eIgpYjXiW6KawRO6OkOPmHmLwyTJV1+RD7vru1SlUpW6oclaYp/IUr3pBy0U=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>yTlOQ5vOe/QBsSEPtJTcBiuvgDqmGWzq6wN9SC0EEijeTtR59Jhqo2ogbDgG4Dh/q9O77qUp/5fuGku95p0CPoXWtYpt666DCkqkISRlI1SzXtzQRPLC/qBnb/QRPg2ImS36u0Y8raSLv5fZuKXVO4wFqXtNBpQxlwPuyRs2btk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQHLw56I30RZRFTT07VMLqGTANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4ATQBDAFMAUABMAC0ASABPAFwATABFAE4ATwBWAE8wHhcNMjQwNzE1MTAwNDQ3WhcNMjUwNzE1MTYwNDQ3WjApMScwJQYDVQQDHh4ATQBDAFMAUABMAC0ASABPAFwATABFAE4ATwBWAE8wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMk5TkObznv0AbEhD7SU3AYrr4A6phls6usDfUgtBBIo3k7UefSYaqNqIGw4BuA4f6vTu+6lKf+X7hpLveadAj6F1rWKbeuugwpKpCEkZSNUs17c0ETywv6gZ2/0ET4NiJkt+rtGPK2ki7+X2bil1TuMBal7TQaUMZcD7skbNm7ZAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAtUt2sA77jimW95yxyck7zKCmtZoCJOV8yr0Uqi+lShByXyb05FNXzn5F5ITOy33SnU2lcIg47X8vWSsuSgEXGmWKw+GJZ0VwOmWHqUxy7LqGXN1idIabNmOvepwocG1a+SnV70em3JCNGJUfsSiTOE8hECH6KiOvkNONv/pNP/k=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=MCSPL-HO\LENOVO" issuerKeyHash="008589cc243f9d84b648f44afb9d8ad811090cf9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>kVKoEFj1I4oa9BYq2Ras7MBdmQDBB8SnmcFIltliYKc=</DigestValue></Reference></SignedInfo><SignatureValue>WS5AXfvKcdpnoyO/7u+oPUMMReEedXe0SDbN2p3FjtmTOztQhBPsZkJ9QoNQaGC243hIfbHnmU69pgM59Fxv1RWjIibTrpwLi34AQN2blPpNy9BdgFuR//bwDUT0b0hpHdA1oiBTAIFjCU2K8i2D1VOlAnUMNs7jvWLuHQLd33M=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>yTlOQ5vOe/QBsSEPtJTcBiuvgDqmGWzq6wN9SC0EEijeTtR59Jhqo2ogbDgG4Dh/q9O77qUp/5fuGku95p0CPoXWtYpt666DCkqkISRlI1SzXtzQRPLC/qBnb/QRPg2ImS36u0Y8raSLv5fZuKXVO4wFqXtNBpQxlwPuyRs2btk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a76062d99648c199a7c407c100995dc0ecac16d92a16f41a8a23f55810a85291" Description="" Url=""><as:assemblyIdentity name="PROJECT Assist Outlook.dll" version="1.1.1.0" publicKeyToken="13316f5ee44bb159" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MCSPL-HO\LENOVO</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>6/cxe5+es0xoQMzsyW81wextusPblZfZeOuotmnFQEI=</DigestValue></Reference></SignedInfo><SignatureValue>Z+t1U3Dz4xkpIGe6m1/JmcqPk8VwyUfsuof/9tVo6W09hFpaGlIANTcjsC081gAxAbeZ4oE205lI7lWxhTBIV5UiN00GBVnr6F6vrCrolgcINc8yrc7j3ThELC0t1qu9m9TI6hviH5rjEoZGj8Rg6yqjh3gdvdfX5JWIwb83FLw=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>yTlOQ5vOe/QBsSEPtJTcBiuvgDqmGWzq6wN9SC0EEijeTtR59Jhqo2ogbDgG4Dh/q9O77qUp/5fuGku95p0CPoXWtYpt666DCkqkISRlI1SzXtzQRPLC/qBnb/QRPg2ImS36u0Y8raSLv5fZuKXVO4wFqXtNBpQxlwPuyRs2btk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQHLw56I30RZRFTT07VMLqGTANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4ATQBDAFMAUABMAC0ASABPAFwATABFAE4ATwBWAE8wHhcNMjQwNzE1MTAwNDQ3WhcNMjUwNzE1MTYwNDQ3WjApMScwJQYDVQQDHh4ATQBDAFMAUABMAC0ASABPAFwATABFAE4ATwBWAE8wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMk5TkObznv0AbEhD7SU3AYrr4A6phls6usDfUgtBBIo3k7UefSYaqNqIGw4BuA4f6vTu+6lKf+X7hpLveadAj6F1rWKbeuugwpKpCEkZSNUs17c0ETywv6gZ2/0ET4NiJkt+rtGPK2ki7+X2bil1TuMBal7TQaUMZcD7skbNm7ZAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAtUt2sA77jimW95yxyck7zKCmtZoCJOV8yr0Uqi+lShByXyb05FNXzn5F5ITOy33SnU2lcIg47X8vWSsuSgEXGmWKw+GJZ0VwOmWHqUxy7LqGXN1idIabNmOvepwocG1a+SnV70em3JCNGJUfsSiTOE8hECH6KiOvkNONv/pNP/k=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
