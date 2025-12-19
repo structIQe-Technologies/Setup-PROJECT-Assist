@@ -72,6 +72,9 @@
         Me.Button4 = Me.Factory.CreateRibbonButton
         Me.ButtonHelp = Me.Factory.CreateRibbonButton
         Me.ButtonRefresh = Me.Factory.CreateRibbonButton
+        Me.Group1 = Me.Factory.CreateRibbonGroup
+        Me.Button1 = Me.Factory.CreateRibbonButton
+        Me.Button3 = Me.Factory.CreateRibbonButton
         Me.TabstructIQe.SuspendLayout()
         Me.grp_ProjectManager.SuspendLayout()
         Me.grp_MailManager.SuspendLayout()
@@ -82,6 +85,7 @@
         Me.Group_Users.SuspendLayout()
         Me.grp_ProjectGroupSettings.SuspendLayout()
         Me.grp_General.SuspendLayout()
+        Me.Group1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabstructIQe
@@ -95,6 +99,7 @@
         Me.TabstructIQe.Groups.Add(Me.Group_Users)
         Me.TabstructIQe.Groups.Add(Me.grp_ProjectGroupSettings)
         Me.TabstructIQe.Groups.Add(Me.grp_General)
+        Me.TabstructIQe.Groups.Add(Me.Group1)
         Me.TabstructIQe.KeyTip = "P"
         Me.TabstructIQe.Label = "PROJECT Assist"
         Me.TabstructIQe.Name = "TabstructIQe"
@@ -395,6 +400,36 @@
         Me.ButtonRefresh.ScreenTip = "Refresh"
         Me.ButtonRefresh.ShowImage = True
         '
+        'Group1
+        '
+        Me.Group1.Items.Add(Me.Button1)
+        Me.Group1.Items.Add(Me.Button3)
+        Me.Group1.Label = "People"
+        Me.Group1.Name = "Group1"
+        Me.Group1.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button1.KeyTip = "QC"
+        Me.Button1.Label = "Clients"
+        Me.Button1.Name = "Button1"
+        Me.Button1.OfficeImageId = "InviteAttendees"
+        Me.Button1.ScreenTip = "Manage Users"
+        Me.Button1.ShowImage = True
+        Me.Button1.SuperTip = "Manage users and define their roles within your company"
+        '
+        'Button3
+        '
+        Me.Button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button3.KeyTip = "QC"
+        Me.Button3.Label = "Users"
+        Me.Button3.Name = "Button3"
+        Me.Button3.OfficeImageId = "InviteAttendees"
+        Me.Button3.ScreenTip = "Manage Users"
+        Me.Button3.ShowImage = True
+        Me.Button3.SuperTip = "Manage users and define their roles within your company"
+        '
         'StructIQe
         '
         Me.Name = "StructIQe"
@@ -421,6 +456,8 @@
         Me.grp_ProjectGroupSettings.PerformLayout()
         Me.grp_General.ResumeLayout(False)
         Me.grp_General.PerformLayout()
+        Me.Group1.ResumeLayout(False)
+        Me.Group1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -456,6 +493,9 @@
     Friend WithEvents Button18 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonHelp As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonRefresh As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Group1 As Microsoft.Office.Tools.Ribbon.RibbonGroup
+    Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Button3 As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection
