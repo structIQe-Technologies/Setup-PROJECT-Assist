@@ -96,10 +96,10 @@
         Me.TabstructIQe.Groups.Add(Me.grp_DrawingManager)
         Me.TabstructIQe.Groups.Add(Me.grp_TimeManager)
         Me.TabstructIQe.Groups.Add(Me.grp_TaskManager)
-        Me.TabstructIQe.Groups.Add(Me.Group_Users)
         Me.TabstructIQe.Groups.Add(Me.grp_ProjectGroupSettings)
-        Me.TabstructIQe.Groups.Add(Me.grp_General)
         Me.TabstructIQe.Groups.Add(Me.Group1)
+        Me.TabstructIQe.Groups.Add(Me.grp_General)
+        Me.TabstructIQe.Groups.Add(Me.Group_Users)
         Me.TabstructIQe.KeyTip = "P"
         Me.TabstructIQe.Label = "PROJECT Assist"
         Me.TabstructIQe.Name = "TabstructIQe"
