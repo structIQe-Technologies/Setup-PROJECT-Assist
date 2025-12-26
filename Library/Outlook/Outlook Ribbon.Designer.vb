@@ -61,20 +61,20 @@
         Me.grp_TaskManager = Me.Factory.CreateRibbonGroup
         Me.Button13 = Me.Factory.CreateRibbonButton
         Me.Button15 = Me.Factory.CreateRibbonButton
-        Me.Group_Users = Me.Factory.CreateRibbonGroup
-        Me.ButtonLogin = Me.Factory.CreateRibbonButton
-        Me.Button_Switch_Accounts = Me.Factory.CreateRibbonButton
         Me.grp_ProjectGroupSettings = Me.Factory.CreateRibbonGroup
         Me.Button12 = Me.Factory.CreateRibbonButton
         Me.Button10 = Me.Factory.CreateRibbonButton
         Me.Button9 = Me.Factory.CreateRibbonButton
+        Me.Group1 = Me.Factory.CreateRibbonGroup
+        Me.Button1 = Me.Factory.CreateRibbonButton
+        Me.Button3 = Me.Factory.CreateRibbonButton
         Me.grp_General = Me.Factory.CreateRibbonGroup
         Me.Button4 = Me.Factory.CreateRibbonButton
         Me.ButtonHelp = Me.Factory.CreateRibbonButton
         Me.ButtonRefresh = Me.Factory.CreateRibbonButton
-        Me.Group1 = Me.Factory.CreateRibbonGroup
-        Me.Button1 = Me.Factory.CreateRibbonButton
-        Me.Button3 = Me.Factory.CreateRibbonButton
+        Me.Group_Users = Me.Factory.CreateRibbonGroup
+        Me.ButtonLogin = Me.Factory.CreateRibbonButton
+        Me.Button_Switch_Accounts = Me.Factory.CreateRibbonButton
         Me.TabstructIQe.SuspendLayout()
         Me.grp_ProjectManager.SuspendLayout()
         Me.grp_MailManager.SuspendLayout()
@@ -82,10 +82,10 @@
         Me.grp_DrawingManager.SuspendLayout()
         Me.grp_TimeManager.SuspendLayout()
         Me.grp_TaskManager.SuspendLayout()
-        Me.Group_Users.SuspendLayout()
         Me.grp_ProjectGroupSettings.SuspendLayout()
-        Me.grp_General.SuspendLayout()
         Me.Group1.SuspendLayout()
+        Me.grp_General.SuspendLayout()
+        Me.Group_Users.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabstructIQe
@@ -292,33 +292,6 @@
         Me.Button15.ScreenTip = "Company Policies"
         Me.Button15.ShowImage = True
         '
-        'Group_Users
-        '
-        Me.Group_Users.Items.Add(Me.ButtonLogin)
-        Me.Group_Users.Items.Add(Me.Button_Switch_Accounts)
-        Me.Group_Users.Label = "User"
-        Me.Group_Users.Name = "Group_Users"
-        '
-        'ButtonLogin
-        '
-        Me.ButtonLogin.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.ButtonLogin.KeyTip = "QC"
-        Me.ButtonLogin.Label = "LogIn"
-        Me.ButtonLogin.Name = "ButtonLogin"
-        Me.ButtonLogin.OfficeImageId = "InsertHighPrivilegeBlock"
-        Me.ButtonLogin.ScreenTip = "LogIn to your structIQe Account"
-        Me.ButtonLogin.ShowImage = True
-        '
-        'Button_Switch_Accounts
-        '
-        Me.Button_Switch_Accounts.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button_Switch_Accounts.KeyTip = "QC"
-        Me.Button_Switch_Accounts.Label = "Switch"
-        Me.Button_Switch_Accounts.Name = "Button_Switch_Accounts"
-        Me.Button_Switch_Accounts.OfficeImageId = "RelatedTasksLayoutNow"
-        Me.Button_Switch_Accounts.ScreenTip = "Switch within your structIQe Accounts"
-        Me.Button_Switch_Accounts.ShowImage = True
-        '
         'grp_ProjectGroupSettings
         '
         Me.grp_ProjectGroupSettings.Items.Add(Me.Button12)
@@ -361,6 +334,36 @@
         Me.Button9.ShowImage = True
         Me.Button9.SuperTip = "Modify your Project Group settings/preferences"
         '
+        'Group1
+        '
+        Me.Group1.Items.Add(Me.Button1)
+        Me.Group1.Items.Add(Me.Button3)
+        Me.Group1.Label = "People"
+        Me.Group1.Name = "Group1"
+        Me.Group1.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button1.KeyTip = "QC"
+        Me.Button1.Label = "Clients"
+        Me.Button1.Name = "Button1"
+        Me.Button1.OfficeImageId = "InviteAttendees"
+        Me.Button1.ScreenTip = "Manage Users"
+        Me.Button1.ShowImage = True
+        Me.Button1.SuperTip = "Manage users and define their roles within your company"
+        '
+        'Button3
+        '
+        Me.Button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button3.KeyTip = "QC"
+        Me.Button3.Label = "Users"
+        Me.Button3.Name = "Button3"
+        Me.Button3.OfficeImageId = "InviteAttendees"
+        Me.Button3.ScreenTip = "Manage Users"
+        Me.Button3.ShowImage = True
+        Me.Button3.SuperTip = "Manage users and define their roles within your company"
+        '
         'grp_General
         '
         Me.grp_General.Items.Add(Me.Button4)
@@ -400,35 +403,33 @@
         Me.ButtonRefresh.ScreenTip = "Refresh"
         Me.ButtonRefresh.ShowImage = True
         '
-        'Group1
+        'Group_Users
         '
-        Me.Group1.Items.Add(Me.Button1)
-        Me.Group1.Items.Add(Me.Button3)
-        Me.Group1.Label = "People"
-        Me.Group1.Name = "Group1"
-        Me.Group1.Visible = False
+        Me.Group_Users.Items.Add(Me.ButtonLogin)
+        Me.Group_Users.Items.Add(Me.Button_Switch_Accounts)
+        Me.Group_Users.Label = "User"
+        Me.Group_Users.Name = "Group_Users"
         '
-        'Button1
+        'ButtonLogin
         '
-        Me.Button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button1.KeyTip = "QC"
-        Me.Button1.Label = "Clients"
-        Me.Button1.Name = "Button1"
-        Me.Button1.OfficeImageId = "InviteAttendees"
-        Me.Button1.ScreenTip = "Manage Users"
-        Me.Button1.ShowImage = True
-        Me.Button1.SuperTip = "Manage users and define their roles within your company"
+        Me.ButtonLogin.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.ButtonLogin.KeyTip = "QC"
+        Me.ButtonLogin.Label = "LogIn"
+        Me.ButtonLogin.Name = "ButtonLogin"
+        Me.ButtonLogin.OfficeImageId = "InsertHighPrivilegeBlock"
+        Me.ButtonLogin.ScreenTip = "LogIn to your structIQe Account"
+        Me.ButtonLogin.ShowImage = True
+        Me.ButtonLogin.Visible = False
         '
-        'Button3
+        'Button_Switch_Accounts
         '
-        Me.Button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button3.KeyTip = "QC"
-        Me.Button3.Label = "Users"
-        Me.Button3.Name = "Button3"
-        Me.Button3.OfficeImageId = "InviteAttendees"
-        Me.Button3.ScreenTip = "Manage Users"
-        Me.Button3.ShowImage = True
-        Me.Button3.SuperTip = "Manage users and define their roles within your company"
+        Me.Button_Switch_Accounts.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button_Switch_Accounts.KeyTip = "QC"
+        Me.Button_Switch_Accounts.Label = "Switch"
+        Me.Button_Switch_Accounts.Name = "Button_Switch_Accounts"
+        Me.Button_Switch_Accounts.OfficeImageId = "RelatedTasksLayoutNow"
+        Me.Button_Switch_Accounts.ScreenTip = "Switch within your structIQe Accounts"
+        Me.Button_Switch_Accounts.ShowImage = True
         '
         'StructIQe
         '
@@ -450,14 +451,14 @@
         Me.grp_TimeManager.PerformLayout()
         Me.grp_TaskManager.ResumeLayout(False)
         Me.grp_TaskManager.PerformLayout()
-        Me.Group_Users.ResumeLayout(False)
-        Me.Group_Users.PerformLayout()
         Me.grp_ProjectGroupSettings.ResumeLayout(False)
         Me.grp_ProjectGroupSettings.PerformLayout()
-        Me.grp_General.ResumeLayout(False)
-        Me.grp_General.PerformLayout()
         Me.Group1.ResumeLayout(False)
         Me.Group1.PerformLayout()
+        Me.grp_General.ResumeLayout(False)
+        Me.grp_General.PerformLayout()
+        Me.Group_Users.ResumeLayout(False)
+        Me.Group_Users.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
