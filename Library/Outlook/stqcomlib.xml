@@ -22,5 +22,16 @@ stqcomlib
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:Common_Library.Shared_MailManagement_Class.BeginMailSaveBatchForUser(System.String)">
+ <summary>
+ Call this when you are about to process many mails for one user,
+ and you have already switched the Supabase session to that user.
+ </summary>
+</member>
+<member name="M:Common_Library.Shared_MailManagement_Class.EndMailSaveBatchForUser">
+ <summary>
+ Call this after finishing the user's batch.
+ </summary>
+</member>
 </members>
 </doc>
