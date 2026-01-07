@@ -407,7 +407,7 @@
         '
         Me.Group_Users.Items.Add(Me.ButtonLogin)
         Me.Group_Users.Items.Add(Me.Button_Switch_Accounts)
-        Me.Group_Users.Label = "User"
+        Me.Group_Users.Label = "Account"
         Me.Group_Users.Name = "Group_Users"
         '
         'ButtonLogin
@@ -419,7 +419,6 @@
         Me.ButtonLogin.OfficeImageId = "InsertHighPrivilegeBlock"
         Me.ButtonLogin.ScreenTip = "LogIn to your structIQe Account"
         Me.ButtonLogin.ShowImage = True
-        Me.ButtonLogin.Visible = False
         '
         'Button_Switch_Accounts
         '
