@@ -93,7 +93,9 @@ Public Class StructIQe
         grp_TimeManager.Visible = False
         grp_TaskManager.Visible = False
         grp_ProjectGroupSettings.Visible = False
+        grp_People.Visible = False
         grp_General.Visible = False
+
     End Sub
 
     Sub Reset_ribbon_from_Database(access As EffectiveAccessDto)
@@ -136,6 +138,7 @@ Public Class StructIQe
         grp_TimeManager.Visible = SupabaseHelper.Has(access, "timesheet")
         grp_TaskManager.Visible = SupabaseHelper.Has(access, "tasks")
         grp_ProjectGroupSettings.Visible = SupabaseHelper.Has(access, "project_group_manager")
+        grp_People.Visible = SupabaseHelper.Has(access, "pa_user_management")
 
         Cursor.Current = Cursors.Default
 
@@ -238,11 +241,7 @@ Public Class StructIQe
 
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As RibbonControlEventArgs) Handles Button12.Click
-        'SecureStore.RestoreLastActiveSessionAndApplyToken(persist:=True)
-        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
-        SharedRibbonButtons.Button_User_Profiles()
-    End Sub
+
 
     Private Sub Button7_Click_1(sender As Object, e As RibbonControlEventArgs) Handles Button7.Click
         Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
@@ -302,4 +301,10 @@ Public Class StructIQe
         Await Common_Library.Cache_Builder.EnsureCache(Shared_Settings.CurrentAccess.CompanyId, forceReload:=True).ConfigureAwait(False)
 
     End Sub
+
+    Private Sub Button_Users_Click(sender As Object, e As RibbonControlEventArgs) Handles Button_Users.Click
+        Refresh_Ribbon_As_per_permissions().GetAwaiter.GetResult()
+        SharedRibbonButtons.Button_User_Profiles()
+    End Sub
+
 End Class

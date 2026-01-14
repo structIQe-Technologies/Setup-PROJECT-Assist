@@ -62,12 +62,11 @@
         Me.Button13 = Me.Factory.CreateRibbonButton
         Me.Button15 = Me.Factory.CreateRibbonButton
         Me.grp_ProjectGroupSettings = Me.Factory.CreateRibbonGroup
-        Me.Button12 = Me.Factory.CreateRibbonButton
         Me.Button10 = Me.Factory.CreateRibbonButton
         Me.Button9 = Me.Factory.CreateRibbonButton
-        Me.Group1 = Me.Factory.CreateRibbonGroup
+        Me.grp_People = Me.Factory.CreateRibbonGroup
         Me.Button1 = Me.Factory.CreateRibbonButton
-        Me.Button3 = Me.Factory.CreateRibbonButton
+        Me.Button_Users = Me.Factory.CreateRibbonButton
         Me.grp_General = Me.Factory.CreateRibbonGroup
         Me.Button4 = Me.Factory.CreateRibbonButton
         Me.ButtonHelp = Me.Factory.CreateRibbonButton
@@ -83,7 +82,7 @@
         Me.grp_TimeManager.SuspendLayout()
         Me.grp_TaskManager.SuspendLayout()
         Me.grp_ProjectGroupSettings.SuspendLayout()
-        Me.Group1.SuspendLayout()
+        Me.grp_People.SuspendLayout()
         Me.grp_General.SuspendLayout()
         Me.Group_Users.SuspendLayout()
         Me.SuspendLayout()
@@ -97,7 +96,7 @@
         Me.TabstructIQe.Groups.Add(Me.grp_TimeManager)
         Me.TabstructIQe.Groups.Add(Me.grp_TaskManager)
         Me.TabstructIQe.Groups.Add(Me.grp_ProjectGroupSettings)
-        Me.TabstructIQe.Groups.Add(Me.Group1)
+        Me.TabstructIQe.Groups.Add(Me.grp_People)
         Me.TabstructIQe.Groups.Add(Me.grp_General)
         Me.TabstructIQe.Groups.Add(Me.Group_Users)
         Me.TabstructIQe.KeyTip = "P"
@@ -294,23 +293,11 @@
         '
         'grp_ProjectGroupSettings
         '
-        Me.grp_ProjectGroupSettings.Items.Add(Me.Button12)
         Me.grp_ProjectGroupSettings.Items.Add(Me.Button10)
         Me.grp_ProjectGroupSettings.Items.Add(Me.Button9)
         Me.grp_ProjectGroupSettings.Label = "Project Group"
         Me.grp_ProjectGroupSettings.Name = "grp_ProjectGroupSettings"
         Me.grp_ProjectGroupSettings.Visible = False
-        '
-        'Button12
-        '
-        Me.Button12.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button12.KeyTip = "QC"
-        Me.Button12.Label = "Users"
-        Me.Button12.Name = "Button12"
-        Me.Button12.OfficeImageId = "InviteAttendees"
-        Me.Button12.ScreenTip = "Manage Users"
-        Me.Button12.ShowImage = True
-        Me.Button12.SuperTip = "Manage users and define their roles within your company"
         '
         'Button10
         '
@@ -334,13 +321,12 @@
         Me.Button9.ShowImage = True
         Me.Button9.SuperTip = "Modify your Project Group settings/preferences"
         '
-        'Group1
+        'grp_People
         '
-        Me.Group1.Items.Add(Me.Button1)
-        Me.Group1.Items.Add(Me.Button3)
-        Me.Group1.Label = "People"
-        Me.Group1.Name = "Group1"
-        Me.Group1.Visible = False
+        Me.grp_People.Items.Add(Me.Button1)
+        Me.grp_People.Items.Add(Me.Button_Users)
+        Me.grp_People.Label = "People"
+        Me.grp_People.Name = "grp_People"
         '
         'Button1
         '
@@ -352,17 +338,18 @@
         Me.Button1.ScreenTip = "Manage Users"
         Me.Button1.ShowImage = True
         Me.Button1.SuperTip = "Manage users and define their roles within your company"
+        Me.Button1.Visible = False
         '
-        'Button3
+        'Button_Users
         '
-        Me.Button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.Button3.KeyTip = "QC"
-        Me.Button3.Label = "Users"
-        Me.Button3.Name = "Button3"
-        Me.Button3.OfficeImageId = "InviteAttendees"
-        Me.Button3.ScreenTip = "Manage Users"
-        Me.Button3.ShowImage = True
-        Me.Button3.SuperTip = "Manage users and define their roles within your company"
+        Me.Button_Users.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.Button_Users.KeyTip = "QC"
+        Me.Button_Users.Label = "Users"
+        Me.Button_Users.Name = "Button_Users"
+        Me.Button_Users.OfficeImageId = "InviteAttendees"
+        Me.Button_Users.ScreenTip = "Manage Users"
+        Me.Button_Users.ShowImage = True
+        Me.Button_Users.SuperTip = "Manage users and define their roles within your company"
         '
         'grp_General
         '
@@ -452,8 +439,8 @@
         Me.grp_TaskManager.PerformLayout()
         Me.grp_ProjectGroupSettings.ResumeLayout(False)
         Me.grp_ProjectGroupSettings.PerformLayout()
-        Me.Group1.ResumeLayout(False)
-        Me.Group1.PerformLayout()
+        Me.grp_People.ResumeLayout(False)
+        Me.grp_People.PerformLayout()
         Me.grp_General.ResumeLayout(False)
         Me.grp_General.PerformLayout()
         Me.Group_Users.ResumeLayout(False)
@@ -482,7 +469,6 @@
     Friend WithEvents grp_ProjectGroupSettings As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button10 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button11 As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents Button12 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents grp_TaskManager As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button13 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Button_Switch_Accounts As Microsoft.Office.Tools.Ribbon.RibbonButton
@@ -493,9 +479,9 @@
     Friend WithEvents Button18 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonHelp As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonRefresh As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents Group1 As Microsoft.Office.Tools.Ribbon.RibbonGroup
+    Friend WithEvents grp_People As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents Button3 As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Button_Users As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection
