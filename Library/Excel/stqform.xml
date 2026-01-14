@@ -57,11 +57,6 @@ stqform
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="M:stqform.CheckboxesFieldControl.PopulateCheckboxes(System.Collections.Generic.List{System.String})">
- <summary>
- Clears and repopulates the FlowLayoutPanel with the current options.
- </summary>
-</member>
 <member name="T:stqform.StaticFields">
  <summary>
  Represents the fixed set of fields common to all forms.
@@ -83,11 +78,6 @@ stqform
 <member name="M:stqform.DesignForm.EditBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
  <summary>
  Fires when the user presses a key in the edit box.
- </summary>
-</member>
-<member name="M:stqform.DropdownFieldControl.PopulateComboBox">
- <summary>
- Clears and repopulates the ComboBox with the current options.
  </summary>
 </member>
 </members>

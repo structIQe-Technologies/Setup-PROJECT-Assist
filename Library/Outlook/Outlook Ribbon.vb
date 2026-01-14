@@ -108,12 +108,18 @@ Public Class StructIQe
             Exit Sub
         End If
 
-        Shared_Settings.Update_app_name()
 
-        TabstructIQe.Label = If(String.IsNullOrWhiteSpace(access.Project_Assist_Name),
-                            Shared_Settings.App_Name, access.Project_Assist_Name)
+        Dim application_name As String = Shared_Settings.Update_app_name()
 
-        If access.EffPaEnabled = False Then
+        TabstructIQe.Label = If(String.IsNullOrWhiteSpace(application_name), Shared_Settings.App_Name, application_name)
+
+        'If access.EffPaEnabled = False Then
+        '    Hide_all_buttons()
+        '    Cursor.Current = Cursors.Default
+        '    Exit Sub
+        'End If
+
+        If Shared_Settings.IsSoftwareEnabled("project_assist") = False Then
             Hide_all_buttons()
             Cursor.Current = Cursors.Default
             Exit Sub
@@ -121,7 +127,6 @@ Public Class StructIQe
 
         grp_General.Visible = True
         grp_ProjectManager.Visible = True
-        '.
 
         ' Feature-controlled items
         btnNewProject.Visible = SupabaseHelper.Has(access, "projects")
